@@ -1,0 +1,8 @@
+__pycache__
+build
+bindings
+node_modules
+example
+*.py
+run
+yarn.lock
