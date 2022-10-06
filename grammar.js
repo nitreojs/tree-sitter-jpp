@@ -471,6 +471,7 @@ module.exports = grammar({
       seq(
         field('left', $._value),
         'is',
+        optional('not'),
         field('right', choice(
           $._type,
           $._primitive_value
