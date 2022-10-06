@@ -133,10 +133,9 @@ module.exports = grammar({
     _expression: $ => choice(
       $._value,
 
-      $.variable_decl,
+      $._declaration,
+
       $.assignment_expr,
-      $.function_decl,
-      $.class_decl,
       $.please_expr,
       $.range_expr,
       $.parenthesized_expr,
@@ -146,10 +145,19 @@ module.exports = grammar({
       $.while_expr,
       $.break_expr,
 
+      $.import_expr,
+      $.export_expr,
+
       $.unary_expr,
       $._binary_expr,
 
       $.block
+    ),
+
+    _declaration: $ => choice(
+      $.variable_decl,
+      $.function_decl,
+      $.class_decl,
     ),
 
     predefined_type: $ => choice(
@@ -483,6 +491,25 @@ module.exports = grammar({
       seq(
         'break',
         optional($._expression)
+      )
+    ),
+
+    _import_path: $ => seq($._import_ident, repeat(seq('/', $._import_ident))),
+    _import_ident: $ => prec.right(
+      repeat1(choice('-', $.identifier, '.'))
+    ),
+
+    import_expr: $ => seq(
+      'take',
+      optional(seq($.identifier, 'from')), // TODO: destructurization?
+      field('source', $._import_path)
+    ),
+
+    export_expr: $ => seq(
+      'give',
+      choice(
+        field('declaration', $._declaration),
+        field('identifier', $.identifier)
       )
     ),
     
