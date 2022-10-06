@@ -138,6 +138,7 @@ module.exports = grammar({
       $.assignment_expr,
       $.please_expr,
       $.range_expr,
+      $.fuck_expr,
       $.parenthesized_expr,
 
       $.if_expr,
@@ -511,6 +512,11 @@ module.exports = grammar({
         field('declaration', $._declaration),
         field('identifier', $.identifier)
       )
+    ),
+
+    fuck_expr: $ => seq(
+      'fuck',
+      field('value', $._expression)
     ),
     
     _binary_expr: $ => choice(
