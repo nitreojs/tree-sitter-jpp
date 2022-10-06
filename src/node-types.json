@@ -1,10 +1,5 @@
 [
   {
-    "type": "COMMENT",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "accessibility_modifier",
     "named": true,
     "fields": {}
@@ -1207,7 +1202,7 @@
           "named": true
         },
         {
-          "type": "operator_overload",
+          "type": "class_operator_override",
           "named": true
         }
       ]
@@ -1448,6 +1443,227 @@
         }
       ]
     }
+  },
+  {
+    "type": "class_operator_override",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "function_decl_args",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "and_expr",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assignment_expr",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "class_decl",
+            "named": true
+          },
+          {
+            "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "export_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "for_expr",
+            "named": true
+          },
+          {
+            "type": "fuck_expr",
+            "named": true
+          },
+          {
+            "type": "function_decl",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "import_expr",
+            "named": true
+          },
+          {
+            "type": "is_expr",
+            "named": true
+          },
+          {
+            "type": "maybe",
+            "named": true
+          },
+          {
+            "type": "member_expr",
+            "named": true
+          },
+          {
+            "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "nothing",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "or_expr",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expr",
+            "named": true
+          },
+          {
+            "type": "please_expr",
+            "named": true
+          },
+          {
+            "type": "pow_expr",
+            "named": true
+          },
+          {
+            "type": "range_expr",
+            "named": true
+          },
+          {
+            "type": "return_expr",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "subscript_expr",
+            "named": true
+          },
+          {
+            "type": "sum_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          },
+          {
+            "type": "variable_decl",
+            "named": true
+          },
+          {
+            "type": "while_expr",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "comp_op",
+            "named": true
+          },
+          {
+            "type": "index_op",
+            "named": true
+          },
+          {
+            "type": "mul_op",
+            "named": true
+          },
+          {
+            "type": "pow_op",
+            "named": true
+          },
+          {
+            "type": "sum_op",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_annotation",
+            "named": true
+          }
+        ]
+      },
+      "type_parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_parameters",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "comp_expr",
@@ -1767,7 +1983,7 @@
       "required": true,
       "types": [
         {
-          "type": "COMP_OP",
+          "type": "comp_op",
           "named": true
         }
       ]
@@ -3557,7 +3773,7 @@
       "required": true,
       "types": [
         {
-          "type": "MUL_OP",
+          "type": "mul_op",
           "named": true
         }
       ]
@@ -3599,222 +3815,6 @@
     "type": "number",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "operator_overload",
-    "named": true,
-    "fields": {
-      "arguments": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "function_decl_args",
-            "named": true
-          }
-        ]
-      },
-      "body": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "and_expr",
-            "named": true
-          },
-          {
-            "type": "array",
-            "named": true
-          },
-          {
-            "type": "assignment_expr",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "class_decl",
-            "named": true
-          },
-          {
-            "type": "comp_expr",
-            "named": true
-          },
-          {
-            "type": "continue",
-            "named": true
-          },
-          {
-            "type": "export_expr",
-            "named": true
-          },
-          {
-            "type": "false",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fuck_expr",
-            "named": true
-          },
-          {
-            "type": "function_decl",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "import_expr",
-            "named": true
-          },
-          {
-            "type": "is_expr",
-            "named": true
-          },
-          {
-            "type": "maybe",
-            "named": true
-          },
-          {
-            "type": "member_expr",
-            "named": true
-          },
-          {
-            "type": "mul_expr",
-            "named": true
-          },
-          {
-            "type": "nothing",
-            "named": true
-          },
-          {
-            "type": "null",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "or_expr",
-            "named": true
-          },
-          {
-            "type": "parenthesized_expr",
-            "named": true
-          },
-          {
-            "type": "please_expr",
-            "named": true
-          },
-          {
-            "type": "pow_expr",
-            "named": true
-          },
-          {
-            "type": "range_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "subscript_expr",
-            "named": true
-          },
-          {
-            "type": "sum_expr",
-            "named": true
-          },
-          {
-            "type": "true",
-            "named": true
-          },
-          {
-            "type": "unary_expr",
-            "named": true
-          },
-          {
-            "type": "variable_decl",
-            "named": true
-          },
-          {
-            "type": "while_expr",
-            "named": true
-          }
-        ]
-      },
-      "operator": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "COMP_OP",
-            "named": true
-          },
-          {
-            "type": "MUL_OP",
-            "named": true
-          },
-          {
-            "type": "POW_OP",
-            "named": true
-          },
-          {
-            "type": "SUM_OP",
-            "named": true
-          },
-          {
-            "type": "UNARY_OP",
-            "named": true
-          }
-        ]
-      },
-      "return_type": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "type_annotation",
-            "named": true
-          }
-        ]
-      },
-      "type_parameters": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "type_parameters",
-            "named": true
-          }
-        ]
-      }
-    }
   },
   {
     "type": "or_expr",
@@ -4612,7 +4612,7 @@
       "required": true,
       "types": [
         {
-          "type": "POW_OP",
+          "type": "pow_op",
           "named": true
         }
       ]
@@ -5965,7 +5965,7 @@
       "required": true,
       "types": [
         {
-          "type": "SUM_OP",
+          "type": "sum_op",
           "named": true
         }
       ]
@@ -6046,10 +6046,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "UNARY_OP",
-          "named": true
-        },
         {
           "type": "and_expr",
           "named": true
@@ -6188,6 +6184,10 @@
         },
         {
           "type": "unary_expr",
+          "named": true
+        },
+        {
+          "type": "unary_op",
           "named": true
         },
         {
@@ -6825,26 +6825,6 @@
     "named": false
   },
   {
-    "type": "COMP_OP",
-    "named": true
-  },
-  {
-    "type": "MUL_OP",
-    "named": true
-  },
-  {
-    "type": "POW_OP",
-    "named": true
-  },
-  {
-    "type": "SUM_OP",
-    "named": true
-  },
-  {
-    "type": "UNARY_OP",
-    "named": true
-  },
-  {
     "type": "[",
     "named": false
   },
@@ -6879,6 +6859,10 @@
   {
     "type": "class",
     "named": false
+  },
+  {
+    "type": "comp_op",
+    "named": true
   },
   {
     "type": "const",
@@ -6945,6 +6929,10 @@
     "named": false
   },
   {
+    "type": "index_op",
+    "named": true
+  },
+  {
     "type": "int",
     "named": false
   },
@@ -6958,6 +6946,10 @@
   },
   {
     "type": "maybe",
+    "named": true
+  },
+  {
+    "type": "mul_op",
     "named": true
   },
   {
@@ -6997,16 +6989,12 @@
     "named": false
   },
   {
-    "type": "private",
-    "named": false
+    "type": "pow_op",
+    "named": true
   },
   {
     "type": "property_identifier",
     "named": true
-  },
-  {
-    "type": "public",
-    "named": false
   },
   {
     "type": "return",
@@ -7022,6 +7010,10 @@
   },
   {
     "type": "string_fragment",
+    "named": true
+  },
+  {
+    "type": "sum_op",
     "named": true
   },
   {
@@ -7041,6 +7033,10 @@
     "named": true
   },
   {
+    "type": "unary_op",
+    "named": true
+  },
+  {
     "type": "while",
     "named": false
   },
@@ -7054,6 +7050,18 @@
   },
   {
     "type": "}",
+    "named": false
+  },
+  {
+    "type": "🔒",
+    "named": false
+  },
+  {
+    "type": "🔓",
+    "named": false
+  },
+  {
+    "type": "🛡️",
     "named": false
   }
 ]

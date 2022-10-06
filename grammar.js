@@ -6,7 +6,7 @@ const NUMBER_BASE = repeat1(DIGIT)
 module.exports = grammar({
   name: 'jpp',
 
-  extras: $ => [/\s/, $.COMMENT],
+  extras: $ => [/\s/, $.comment],
   word: $ => $.identifier,
 
   rules: {
@@ -93,13 +93,16 @@ module.exports = grammar({
     nothing: $ => 'nothing',
     continue: $ => 'continue',
 
-    COMMENT: $ => seq('#', /.*/),
+    comment: $ => seq('#', /.*/),
 
-    COMP_OP: $ => /[=!]=|[><]=?/,
-    SUM_OP: $ => /[+-]/,
-    MUL_OP: $ => /[*/%]/,
-    POW_OP: $ => '**',
-    UNARY_OP: $ => /not|\+|-|!/,
+    comp_op: $ => /[=!]=|[><]=?/,
+    sum_op: $ => /[+-]/,
+    mul_op: $ => /[*/%]/,
+    pow_op: $ => '**',
+    index_op: $ => '[]',
+    unary_op: $ => /not|\+|-/,
+
+    _possible_overridable_op: $ => choice($.comp_op, $.sum_op, $.mul_op, $.pow_op, $.index_op),
 
     _primitive_value: $ => choice(
       $.true,
@@ -235,11 +238,16 @@ module.exports = grammar({
       choice($._type, $.literal_type)
     ),
 
+    _function_decl_arg: $ => seq(
+      field('name', $.identifier),
+      field('type', $.type_annotation)
+    ),
+
     function_decl_args: $ => seq(
       '(',
       repeat(seq(
-        field('name', $.identifier),
-        field('type', $.type_annotation)
+        $._function_decl_arg,
+        optional(choice(',', 'and'))
       )),
       ')'
     ),
@@ -276,12 +284,13 @@ module.exports = grammar({
     ),
 
     accessibility_modifier: $ => choice(
-      'private',
-      'public'
+      '🔒', // private
+      '🔓', // public
+      '🛡️'  // protected (:shield:)
     ),
 
-    operator_overload: $ => seq(
-      seq('operator', field('operator', choice($.COMP_OP, $.SUM_OP, $.MUL_OP, $.POW_OP, $.UNARY_OP))),
+    class_operator_override: $ => seq(
+      seq('operator', field('operator', $._possible_overridable_op)),
       $._function_signature
     ),
 
@@ -296,7 +305,7 @@ module.exports = grammar({
       '{',
       repeat(choice(
         $.class_function_definition,
-        $.operator_overload
+        $.class_operator_override
       )),
       '}'
     ),
@@ -371,7 +380,7 @@ module.exports = grammar({
       1,
       seq(
         field('left', $._expression),
-        $.COMP_OP,
+        $.comp_op,
         field('right', $._expression)
       )
     ),
@@ -380,7 +389,7 @@ module.exports = grammar({
       2,
       seq(
         field('left', $._expression),
-        $.SUM_OP,
+        $.sum_op,
         field('right', $._expression)
       )
     ),
@@ -389,7 +398,7 @@ module.exports = grammar({
       3,
       seq(
         field('left', $._expression),
-        $.MUL_OP,
+        $.mul_op,
         field('right', $._expression)
       )
     ),
@@ -398,7 +407,7 @@ module.exports = grammar({
       4,
       seq(
         field('left', $._expression),
-        $.POW_OP,
+        $.pow_op,
         field('right', $._expression)
       )
     ),
@@ -411,7 +420,7 @@ module.exports = grammar({
     unary_expr: $ => prec.left(
       6,
       choice(
-        seq($.UNARY_OP, $._expression),
+        seq($.unary_op, $._expression),
         $.unary_percent
       )
     ),
