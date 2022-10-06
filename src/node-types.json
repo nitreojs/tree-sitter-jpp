@@ -1699,7 +1699,7 @@
     "fields": {
       "declaration": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "class_decl",
@@ -1711,6 +1711,16 @@
           },
           {
             "type": "variable_decl",
+            "named": true
+          }
+        ]
+      },
+      "identifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
