@@ -1,0 +1,7 @@
+# SYNTAX:
+# import_expr: 'take' [ identifier 'from' ] _import_path
+# _import_path: _import_ident [ '/' _import_ident ]*
+# _import_ident: ( '-' | identifier | '.' )+
+
+take extra/math       # returns: null
+take foo/bar/baz.jpp  # returns: null

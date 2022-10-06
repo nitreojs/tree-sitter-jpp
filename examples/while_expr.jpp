@@ -1,0 +1,5 @@
+# SYNTAX:
+# while_expr: 'while' expression _do_expr_or_block
+
+while condition do nothing                         # returns: null
+while i < 5 do if i is 3 then break i else i += 1  # returns: 3

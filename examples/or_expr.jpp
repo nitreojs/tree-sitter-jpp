@@ -1,0 +1,4 @@
+# SYNTAX:
+# or_expr: expression 'or' expression
+
+left or right  # returns: left is left is truthy, right otherwise

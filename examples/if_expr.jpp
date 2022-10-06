@@ -1,0 +1,5 @@
+# SYNTAX:
+# if_expr: 'if' expression 'then' expression [ 'else' expression ]
+
+if maybe then print('lucky!')                   # returns: 'lucky!' if maybe returns true, null otherwise
+if condition then consequence else alternative  # returns: consequence if condition is truthy, alternative otherwise

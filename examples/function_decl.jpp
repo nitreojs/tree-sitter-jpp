@@ -1,0 +1,17 @@
+# SYNTAX:
+# function_decl: [ 'async' ] 'fn' [ identifier ] _function_signature
+# _function_signature: [ type_parameters ] function_decl_args [ type_annotation ] ( block | '->' expression )
+# function_decl_args: '(' [ identifier type_annotation [ ',' | 'and' ] ]* ')'
+# type_parameters: ( '[' _type_parameter_decl ']' | '<' _type_parameter_decl '>' )
+# _type_parameter_decl: type_parameter [ ',' type_parameter ]*
+# type_parameter: type_identifier
+
+fn f11() -> nothing                                  # returns: fn f11() -> nothing
+fn f12() {}                                          # returns: fn f12() {}
+fn f13(value: int) -> value                          # returns: fn f13(value: int) -> value
+fn f14(value: int): int -> value                     # returns: fn f14(value: int): int -> value
+fn f15(value as int) as int? -> if maybe then value  # returns: fn f15(value: int): int? -> if maybe then value
+
+fn f21[T](value: T) -> value                  # returns: fn f21[T](value: T) -> value
+fn f22<T>(value: T) -> value                  # returns: fn f22[T](value: T) -> value
+fn f23[T](v: T) as T? -> if maybe then value  # returns: fn f23[T](v: T): T? -> if maybe then value

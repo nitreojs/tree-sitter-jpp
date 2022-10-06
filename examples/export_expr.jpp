@@ -1,0 +1,4 @@
+# SYNTAX:
+# export_expr: 'give' ( declaration | identifier )
+
+give const important_value = 42  # returns: 42

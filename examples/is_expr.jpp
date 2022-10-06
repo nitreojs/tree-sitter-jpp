@@ -1,0 +1,7 @@
+# SYNTAX:
+# is_expr: _value 'is' [ 'not' ] ( _type | _primitive_value )
+
+value is bool  # returns: bool
+42 is 42       # returns: true
+42 is number   # returns: true
+42 is string   # returns: false

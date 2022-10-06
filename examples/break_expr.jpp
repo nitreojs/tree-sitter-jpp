@@ -1,0 +1,5 @@
+# SYNTAX:
+# break_expr: 'break' [ expression ]
+
+for i in 1->10 do break i                   # returns: 1
+for j in 10->1..-1 do if j is 7 then break  # returns: null

@@ -1,0 +1,6 @@
+# SYNTAX:
+# return_expr: 'return' expression
+
+fn do() {
+  return 14  # returns: 14
+}            # returns: fn do() -> 14

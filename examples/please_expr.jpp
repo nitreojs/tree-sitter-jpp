@@ -1,0 +1,7 @@
+# SYNTAX:
+# please_expr: 'please' expression
+
+fn throws() -> fuck 'an error has occured'
+
+please throws()                             # returns: null
+please 4                                    # returns: 4

@@ -1,0 +1,13 @@
+# SYNTAX:
+# class_decl: 'class' identifier class_body
+# class_body: '{' [ ( class_function_definition | class_operator_override ) ]* '}'
+# class_function_definition: [ accessibility_modifier ] [ 'get' | 'set' ] identifier _function_signature
+# accessibility_modifier: '🔒' | '🔓' | '🛡️'
+
+class c1 {}                                         # returns: class c1 { ... }
+class c2 {
+  🔒 foo() -> 'bar'
+}                                                   # returns: class c2 { ... }
+class c3 {
+  operator+(left is c3 and right is c3) -> nothing
+}                                                   # returns: class c3 { ... }

@@ -1,0 +1,5 @@
+# SYNTAX:
+# type_decl: 'type' identifier ( '=' | 'be' | 'is' ) _type
+
+type 🔠 is string  # returns: null
+type A is B        # returns: null

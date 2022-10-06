@@ -1,0 +1,11 @@
+# SYNTAX:
+# ( 'let' | 'const' ) identifier [ ( '=' | 'be' | 'is' ) expression ]
+
+let v11              # returns: null
+let v12 = 15         # returns: 15
+let v13: int = 1337  # returns: 1337
+let 😁 = '😁'        # returns: '😁'
+
+const v21                # throws an error
+const v22 = 'defined'    # returns: 'defined'
+const v23: bool = maybe  # returns: true | false

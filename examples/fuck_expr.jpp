@@ -1,0 +1,4 @@
+# SYNTAX:
+# fuck_expr: 'fuck' expression
+
+fuck 'an error has occured'  # throws an error

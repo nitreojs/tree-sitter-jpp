@@ -1,0 +1,4 @@
+# SYNTAX:
+# and_expr: expression 'and' expression
+
+left and right  # returns: true if left and right are truthy, false otherwise

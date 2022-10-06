@@ -1,0 +1,10 @@
+# SYNTAX:
+# for_expr: 'for' identifier 'in' expression _do_expr_or_block
+
+for i in 1->5 do nothing  # returns: null
+for i in 1->>10..2 {
+  print(i)
+}                         # returns: null
+for i in 1->>10 {
+  if i > 5 then break i
+}                         # returns: 6
