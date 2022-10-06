@@ -1,5 +1,5 @@
 # SYNTAX:
-# ( 'let' | 'const' ) identifier [ ( '=' | 'be' | 'is' ) expression ]
+# variable_decl: ( 'let' | 'const' ) identifier [ ( '=' | 'be' | 'is' ) expression ]
 
 let v11              # returns: null
 let v12 = 15         # returns: 15
