@@ -139,6 +139,7 @@ module.exports = grammar({
       $.please_expr,
       $.range_expr,
       $.fuck_expr,
+      $.return_expr,
       $.parenthesized_expr,
 
       $.if_expr,
@@ -516,6 +517,11 @@ module.exports = grammar({
 
     fuck_expr: $ => seq(
       'fuck',
+      field('value', $._expression)
+    ),
+
+    return_expr: $ => seq(
+      'return',
       field('value', $._expression)
     ),
     
