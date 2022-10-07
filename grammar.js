@@ -457,8 +457,13 @@ module.exports = grammar({
       seq(
         'if',
         field('condition', $._expression),
-        'then',
-        field('consequence', $._expression),
+        choice(
+          seq(
+            'then',
+            field('consequence', $._expression),
+          ),
+          field('consequence', $.block)
+        ),
         optional(
           seq(
             'else',
