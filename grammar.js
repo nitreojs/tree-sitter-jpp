@@ -143,6 +143,7 @@ module.exports = grammar({
       $.range_expr,
       $.fuck_expr,
       $.return_expr,
+      $.struct_expr,
       $.parenthesized_expr,
 
       $.if_expr,
@@ -335,6 +336,14 @@ module.exports = grammar({
       'struct',
       field('name', $.identifier),
       $.struct_body
+    ),
+
+    struct_expr: $ => prec(
+      10,
+      seq(
+        $.identifier,
+        $.struct_body
+      )
     ),
 
     enum_body: $ => seq(
