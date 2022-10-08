@@ -1,0 +1,8 @@
+# SYNTAX:
+# enum_decl: 'enum' identifier enum_body
+# enum_body: '{' [ identifier [ _assignment_char expression ] [ ',' ] ]* '}'
+
+enum Status {
+  Ok    = 0
+  Error = -1
+}              # returns: enum Status { ... }
