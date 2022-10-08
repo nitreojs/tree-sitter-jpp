@@ -1,0 +1,10 @@
+# SYNTAX:
+# struct_expr: identifier struct_expr_body
+# struct_expr_body: '{' [ identifier _assignment_char expression [ ',' ] ]* '}'
+
+struct User {
+  id: int
+  username: string
+}
+
+let user1 be User { id = 1, username = 'admin' }  # returns: User { ... }
