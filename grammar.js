@@ -164,6 +164,7 @@ module.exports = grammar({
       $.function_decl,
       $.class_decl,
       $.struct_decl,
+      $.enum_decl,
       $.type_decl
     ),
 
@@ -207,13 +208,15 @@ module.exports = grammar({
       '}'
     ),
 
+    _assignment_char: $ => choice('=', 'be', 'is'),
+
     variable_decl: $ => prec.right(
       seq(
         choice('let', 'const'),
         field('variable', $.identifier),
         optional(
           seq(
-            choice('=', 'be', 'is'),
+            $._assignment_char,
             field('value', $._expression)
           )
         )
@@ -334,11 +337,30 @@ module.exports = grammar({
       $.struct_body
     ),
 
+    enum_body: $ => seq(
+      '{',
+      repeat(seq(
+        field('key', $.identifier),
+        optional(seq(
+          $._assignment_char,
+          field('value', $._expression)
+        )),
+        optional(',')
+      )),
+      '}'
+    ),
+
+    enum_decl: $ => seq(
+      'enum',
+      field('name', $.identifier),
+      $.enum_body
+    ),
+
     type_decl: $ => prec.right(
       seq(
         'type',
         field('name', $.identifier),
-        choice('=', 'be', 'is'),
+        $._assignment_char,
         field('type', $._type)
       )
     ),
