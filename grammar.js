@@ -46,6 +46,14 @@ module.exports = grammar({
           $.escape_sequence
         )),
         "'"
+      ),
+      seq(
+        '«',
+        repeat(choice(
+          alias($.unescaped_super_string_fragment, $.string_fragment),
+          $.escape_sequence
+        )),
+        '»'
       )
     ),
     array: $ => seq(
@@ -65,6 +73,9 @@ module.exports = grammar({
 
     unescaped_single_string_fragment: $ =>
       token.immediate(prec(1, /[^'\\]+/)),
+    
+    unescaped_super_string_fragment: $ =>
+      token.immediate(prec(1, /[^«»\\]+/)),
     
     escape_sequence: $ => token.immediate(seq(
       '\\',
