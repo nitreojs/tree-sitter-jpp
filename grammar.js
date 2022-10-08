@@ -338,11 +338,22 @@ module.exports = grammar({
       $.struct_body
     ),
 
+    struct_expr_body: $ => seq(
+      '{',
+      repeat(seq(
+        field('field', $.identifier),
+        $._assignment_char,
+        field('value', $._expression),
+        optional(',')
+      )),
+      '}'
+    ),
+
     struct_expr: $ => prec(
       10,
       seq(
         $.identifier,
-        $.struct_body
+        $.struct_expr_body
       )
     ),
 
