@@ -163,6 +163,7 @@ module.exports = grammar({
       $.variable_decl,
       $.function_decl,
       $.class_decl,
+      $.struct_decl,
       $.type_decl
     ),
 
@@ -315,6 +316,22 @@ module.exports = grammar({
       'class',
       field('name', $.identifier),
       $.class_body
+    ),
+
+    struct_body: $ => seq(
+      '{',
+      repeat(seq(
+        field('field', $.identifier),
+        field('type', $.type_annotation),
+        optional(',')
+      )),
+      '}'
+    ),
+
+    struct_decl: $ => seq(
+      'struct',
+      field('name', $.identifier),
+      $.struct_body
     ),
 
     type_decl: $ => prec.right(

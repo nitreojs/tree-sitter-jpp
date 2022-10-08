@@ -137,6 +137,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -297,6 +301,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_decl",
           "named": true
         },
         {
@@ -500,6 +508,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -687,6 +699,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -850,6 +866,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -1010,6 +1030,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_decl",
           "named": true
         },
         {
@@ -1183,6 +1207,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -1405,6 +1433,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -1616,6 +1648,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -1834,6 +1870,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -1992,6 +2032,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -2047,6 +2091,10 @@
           },
           {
             "type": "function_decl",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -2206,6 +2254,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -2377,6 +2429,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -2538,6 +2594,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -2712,6 +2772,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -2935,6 +2999,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -3093,6 +3161,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -3248,6 +3320,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -3664,6 +3740,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -3819,6 +3899,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -4033,6 +4117,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -4196,6 +4284,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -4356,6 +4448,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -4523,6 +4619,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -4678,6 +4778,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -4860,6 +4964,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -5018,6 +5126,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -5173,6 +5285,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -5340,6 +5456,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -5504,6 +5624,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -5548,6 +5672,58 @@
         },
         {
           "type": "string_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "struct_body",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "type_annotation",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "struct_decl",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "struct_body",
           "named": true
         }
       ]
@@ -5683,6 +5859,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -5908,6 +6088,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -6063,6 +6247,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -6345,6 +6533,10 @@
           "named": true
         },
         {
+          "type": "struct_decl",
+          "named": true
+        },
+        {
           "type": "subscript_expr",
           "named": true
         },
@@ -6579,6 +6771,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -6753,6 +6949,10 @@
             "named": true
           },
           {
+            "type": "struct_decl",
+            "named": true
+          },
+          {
             "type": "subscript_expr",
             "named": true
           },
@@ -6908,6 +7108,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_decl",
             "named": true
           },
           {
@@ -7201,6 +7405,10 @@
   {
     "type": "string_fragment",
     "named": true
+  },
+  {
+    "type": "struct",
+    "named": false
   },
   {
     "type": "sum_op",
