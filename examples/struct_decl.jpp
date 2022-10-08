@@ -1,0 +1,9 @@
+# SYNTAX:
+# struct_decl: 'struct' identifier struct_body
+# struct_body: '{' [ identifier type_annotation [ ',' ] ]* '}'
+
+struct User { id as int }  # returns: struct User { ... }
+struct Message {
+  text: string,
+  sender_id: number
+}                          # returns: struct Message { ... }
