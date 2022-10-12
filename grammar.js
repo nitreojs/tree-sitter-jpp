@@ -13,90 +13,90 @@ module.exports = grammar({
     source_file: $ => repeat($._expression),
 
     identifier: () => token(
-        repeat1(
-            choice(
-                IDENTIFIER,
-                EMOJI
-            )
+      repeat1(
+        choice(
+          IDENTIFIER,
+          EMOJI
         )
+      )
     ),
     _integer: () => token(
-        repeat1(DIGIT)
+      repeat1(DIGIT)
     ),
     _float: () => token(
-        seq(optional(NUMBER_BASE), '.', NUMBER_BASE)
+      seq(optional(NUMBER_BASE), '.', NUMBER_BASE)
     ),
     number: $ => choice(
-        $._integer,
-        $._float
+      $._integer,
+      $._float
     ),
     string: $ => choice(
-        seq(
-            '"',
-            repeat(choice(
-                alias($.unescaped_double_string_fragment, $.string_fragment),
-                $.escape_sequence
-            )),
-            '"'
-        ),
-        seq(
-            '\'',
-            repeat(choice(
-                alias($.unescaped_single_string_fragment, $.string_fragment),
-                $.escape_sequence
-            )),
-            '\''
-        ),
-        seq(
-            '«',
-            repeat(choice(
-                alias($.unescaped_super_string_fragment, $.string_fragment),
-                $.escape_sequence
-            )),
-            '»'
-        )
+      seq(
+        '"',
+        repeat(choice(
+          alias($.unescaped_double_string_fragment, $.string_fragment),
+          $.escape_sequence
+        )),
+        '"'
+      ),
+      seq(
+        '\'',
+        repeat(choice(
+          alias($.unescaped_single_string_fragment, $.string_fragment),
+          $.escape_sequence
+        )),
+        '\''
+      ),
+      seq(
+        '«',
+        repeat(choice(
+          alias($.unescaped_super_string_fragment, $.string_fragment),
+          $.escape_sequence
+        )),
+        '»'
+      )
     ),
     array: $ => seq(
-        '[',
-        repeat(
-            seq(
-                $._expression,
-                optional(',')
-            )
-        ),
-        ']'
+      '[',
+      repeat(
+        seq(
+          $._expression,
+          optional(',')
+        )
+      ),
+      ']'
     ),
 
     // INFO: string helpers; from tree-sitter-javascript
     unescaped_double_string_fragment: () =>
-        token.immediate(prec(1, /[^"\\]+/)),
+      token.immediate(prec(1, /[^"\\]+/)),
 
     unescaped_single_string_fragment: () =>
-        token.immediate(prec(1, /[^'\\]+/)),
+      token.immediate(prec(1, /[^'\\]+/)),
 
     unescaped_super_string_fragment: () =>
-        token.immediate(prec(1, /[^«»\\]+/)),
+      token.immediate(prec(1, /[^«»\\]+/)),
 
     escape_sequence: () => token.immediate(seq(
-        '\\',
-        choice(
-            /[^xu0-7]/,
-            /[0-7]{1,3}/,
-            /x[0-9a-fA-F]{2}/,
-            /u[0-9a-fA-F]{4}/,
-            /u{[0-9a-fA-F]+}/
-        )
+      '\\',
+      choice(
+        /[^xu0-7]/,
+        /[0-7]{1,3}/,
+        /x[0-9a-fA-F]{2}/,
+        /u[0-9a-fA-F]{4}/,
+        /u{[0-9a-fA-F]+}/
+      )
     )),
 
     _semicolon: () => ';',
 
     true: () => choice(
-        'true',
-        'yes'
+      'true',
+      'yes'
     ),
     false: () => choice(
-        'false',
-        'no'
+      'false',
+      'no'
     ),
     maybe: () => 'maybe',
     null: () => 'null',
@@ -116,519 +116,519 @@ module.exports = grammar({
     _possible_overridable_op: $ => choice($.comp_op, $.sum_op, $.mul_op, $.pow_op, $.index_op),
 
     _primitive_value: $ => choice(
-        $.true,
-        $.false,
-        $.maybe,
-        $.null,
+      $.true,
+      $.false,
+      $.maybe,
+      $.null,
 
-        $.number,
-        $.string
+      $.number,
+      $.string
     ),
 
     _value: $ => prec(
-        1,
-        choice(
-            $._primitive_value,
+      1,
+      choice(
+        $._primitive_value,
 
-            $.nothing,
-            $.continue,
+        $.nothing,
+        $.continue,
 
-            $.call_expr,
-            $.subscript_expr,
-            $.member_expr,
+        $.call_expr,
+        $.subscript_expr,
+        $.member_expr,
 
-            $.identifier,
-            $.array,
+        $.identifier,
+        $.array,
 
-            $._semicolon
-        )
+        $._semicolon
+      )
     ),
 
     _expression: $ => choice(
-        $._value,
+      $._value,
 
-        $._declaration,
+      $._declaration,
 
-        $.assignment_expr,
-        $.please_expr,
-        $.range_expr,
-        $.fuck_expr,
-        $.return_expr,
-        $.struct_expr,
-        $.parenthesized_expr,
+      $.assignment_expr,
+      $.please_expr,
+      $.range_expr,
+      $.fuck_expr,
+      $.return_expr,
+      $.struct_expr,
+      $.parenthesized_expr,
 
-        $.if_expr,
-        $.for_expr,
-        $.while_expr,
-        $.break_expr,
+      $.if_expr,
+      $.for_expr,
+      $.while_expr,
+      $.break_expr,
 
-        $.import_expr,
-        $.export_expr,
+      $.import_expr,
+      $.export_expr,
 
-        $.unary_expr,
-        $._binary_expr,
+      $.unary_expr,
+      $._binary_expr,
 
-        $.block
+      $.block
     ),
 
     _declaration: $ => choice(
-        $.variable_decl,
-        $.function_decl,
-        $.class_decl,
-        $.struct_decl,
-        $.enum_decl,
-        $.type_decl
+      $.variable_decl,
+      $.function_decl,
+      $.class_decl,
+      $.struct_decl,
+      $.enum_decl,
+      $.type_decl
     ),
 
     predefined_type: () => choice(
-        'int',
-        'bool',
-        'float',
-        'string',
-        'nothing',
-        'number'
+      'int',
+      'bool',
+      'float',
+      'string',
+      'nothing',
+      'number'
     ),
 
     array_type: $ => seq(
-        $._type,
-        '[',
-        ']'
+      $._type,
+      '[',
+      ']'
     ),
 
     nullable_type: $ => seq(
-        $._type,
-        '?'
+      $._type,
+      '?'
     ),
 
     literal_type: $ => choice(
-        $.string,
-        $.number,
-        $.true,
-        $.false
+      $.string,
+      $.number,
+      $.true,
+      $.false
     ),
 
     _type: $ => choice(
-        $.predefined_type,
-        $.array_type,
-        $.nullable_type,
-        alias($.identifier, $.type_identifier)
+      $.predefined_type,
+      $.array_type,
+      $.nullable_type,
+      alias($.identifier, $.type_identifier)
     ),
 
     block: $ => seq(
-        '{',
-        repeat($._expression),
-        '}'
+      '{',
+      repeat($._expression),
+      '}'
     ),
 
     _assignment_char: () => choice('=', 'be', 'is'),
 
     variable_decl: $ => prec.right(
-        seq(
-            choice('let', 'const'),
-            field('variable', $.identifier),
-            optional(
-                seq(
-                    $._assignment_char,
-                    field('value', $._expression)
-                )
-            )
+      seq(
+        choice('let', 'const'),
+        field('variable', $.identifier),
+        optional(
+          seq(
+            $._assignment_char,
+            field('value', $._expression)
+          )
         )
+      )
     ),
 
     assignment_target: $ => choice(
-        $.identifier,
-        $.subscript_expr,
-        $.member_expr
+      $.identifier,
+      $.subscript_expr,
+      $.member_expr
     ),
 
     assignment_expr: $ => seq(
-        field('left', $.assignment_target),
-        choice(
-            '=',
-            seq('is', 'now')
-        ),
-        field('right', $._expression)
+      field('left', $.assignment_target),
+      choice(
+        '=',
+        seq('is', 'now')
+      ),
+      field('right', $._expression)
     ),
 
     type_annotation: $ => seq(
-        choice(':', 'as'),
-        choice($._type, $.literal_type)
+      choice(':', 'as'),
+      choice($._type, $.literal_type)
     ),
 
     _function_decl_arg: $ => seq(
-        field('name', $.identifier),
-        field('type', $.type_annotation)
+      field('name', $.identifier),
+      field('type', $.type_annotation)
     ),
 
     function_decl_args: $ => seq(
-        '(',
-        repeat(seq(
-            $._function_decl_arg,
-            optional(choice(',', 'and'))
-        )),
-        ')'
+      '(',
+      repeat(seq(
+        $._function_decl_arg,
+        optional(choice(',', 'and'))
+      )),
+      ')'
     ),
 
     type_parameter: $ => seq(
-        field('name', alias($.identifier, $.type_identifier))
+      field('name', alias($.identifier, $.type_identifier))
     ),
 
     _type_parameter_decl: $ => seq(
-        $.type_parameter,
-        repeat(seq(',', $.type_parameter))
+      $.type_parameter,
+      repeat(seq(',', $.type_parameter))
     ),
 
     type_parameters: $ => choice(
-        seq('[', $._type_parameter_decl, ']'),
-        seq('<', $._type_parameter_decl, '>')
+      seq('[', $._type_parameter_decl, ']'),
+      seq('<', $._type_parameter_decl, '>')
     ),
 
     _function_signature: $ => seq(
-        optional(field('type_parameters', $.type_parameters)),
-        field('arguments', $.function_decl_args),
-        optional(field('return_type', $.type_annotation)),
-        choice(
-            field('body', $.block),
-            seq('->', field('body', $._expression))
-        )
+      optional(field('type_parameters', $.type_parameters)),
+      field('arguments', $.function_decl_args),
+      optional(field('return_type', $.type_annotation)),
+      choice(
+        field('body', $.block),
+        seq('->', field('body', $._expression))
+      )
     ),
 
     function_decl: $ => seq(
-        optional('async'),
-        'fn',
-        optional(field('name', $.identifier)),
-        $._function_signature
+      optional('async'),
+      'fn',
+      optional(field('name', $.identifier)),
+      $._function_signature
     ),
 
     accessibility_modifier: () => choice(
-        '🔒', // private
-        '🔓', // public
-        '🛡️'  // protected (:shield:)
+      '🔒', // private
+      '🔓', // public
+      '🛡️'  // protected (:shield:)
     ),
 
     class_operator_override: $ => seq(
-        seq('operator', field('operator', $._possible_overridable_op)),
-        $._function_signature
+      seq('operator', field('operator', $._possible_overridable_op)),
+      $._function_signature
     ),
 
     class_function_definition: $ => seq(
-        optional($.accessibility_modifier),
-        optional(choice('get', 'set')),
-        field('name', $.identifier),
-        $._function_signature
+      optional($.accessibility_modifier),
+      optional(choice('get', 'set')),
+      field('name', $.identifier),
+      $._function_signature
     ),
 
     class_body: $ => seq(
-        '{',
-        repeat(choice(
-            $.class_function_definition,
-            $.class_operator_override
-        )),
-        '}'
+      '{',
+      repeat(choice(
+        $.class_function_definition,
+        $.class_operator_override
+      )),
+      '}'
     ),
 
     class_decl: $ => seq(
-        'class',
-        field('name', $.identifier),
-        $.class_body
+      'class',
+      field('name', $.identifier),
+      $.class_body
     ),
 
     struct_body: $ => seq(
-        '{',
-        repeat(seq(
-            field('field', $.identifier),
-            field('type', $.type_annotation),
-            optional(',')
-        )),
-        '}'
+      '{',
+      repeat(seq(
+        field('field', $.identifier),
+        field('type', $.type_annotation),
+        optional(',')
+      )),
+      '}'
     ),
 
     struct_decl: $ => seq(
-        'struct',
-        field('name', $.identifier),
-        $.struct_body
+      'struct',
+      field('name', $.identifier),
+      $.struct_body
     ),
 
     struct_expr_body: $ => seq(
-        '{',
-        repeat(seq(
-            field('field', $.identifier),
-            $._assignment_char,
-            field('value', $._expression),
-            optional(',')
-        )),
-        '}'
+      '{',
+      repeat(seq(
+        field('field', $.identifier),
+        $._assignment_char,
+        field('value', $._expression),
+        optional(',')
+      )),
+      '}'
     ),
 
     struct_expr: $ => prec(
-        10,
-        seq(
-            $.identifier,
-            $.struct_expr_body
-        )
+      10,
+      seq(
+        $.identifier,
+        $.struct_expr_body
+      )
     ),
 
     enum_body: $ => seq(
-        '{',
-        repeat(seq(
-            field('key', $.identifier),
-            optional(seq(
-                $._assignment_char,
-                field('value', $._expression)
-            )),
-            optional(',')
+      '{',
+      repeat(seq(
+        field('key', $.identifier),
+        optional(seq(
+          $._assignment_char,
+          field('value', $._expression)
         )),
-        '}'
+        optional(',')
+      )),
+      '}'
     ),
 
     enum_decl: $ => seq(
-        'enum',
-        field('name', $.identifier),
-        $.enum_body
+      'enum',
+      field('name', $.identifier),
+      $.enum_body
     ),
 
     type_decl: $ => prec.right(
-        seq(
-            'type',
-            field('name', $.identifier),
-            $._assignment_char,
-            field('type', $._type)
-        )
+      seq(
+        'type',
+        field('name', $.identifier),
+        $._assignment_char,
+        field('type', $._type)
+      )
     ),
 
     please_expr: $ => prec.right(
-        seq(
-            'please',
-            field('expression', $._expression)
-        )
+      seq(
+        'please',
+        field('expression', $._expression)
+      )
     ),
 
     call_args: $ => seq(
-        '(',
-        repeat(
-            seq(
-                $._expression,
-                optional(choice(',', 'and'))
-            )
-        ),
-        ')'
+      '(',
+      repeat(
+        seq(
+          $._expression,
+          optional(choice(',', 'and'))
+        )
+      ),
+      ')'
     ),
 
     subscript_expr: $ => prec(
-        99,
-        seq(
-            field('object', $._value),
-            '[',
-            field('index', $._expression),
-            ']'
-        )
+      99,
+      seq(
+        field('object', $._value),
+        '[',
+        field('index', $._expression),
+        ']'
+      )
     ),
 
     member_expr: $ => prec(
-        99,
-        seq(
-            field('object', $._value),
-            '.',
-            field('property', alias($.identifier, $.property_identifier))
-        )
+      99,
+      seq(
+        field('object', $._value),
+        '.',
+        field('property', alias($.identifier, $.property_identifier))
+      )
     ),
 
     call_expr: $ => prec(
-        1,
-        seq(
-            field('function', $._expression),
-            field('arguments', $.call_args)
-        )
+      1,
+      seq(
+        field('function', $._expression),
+        field('arguments', $.call_args)
+      )
     ),
 
     range_expr: $ => prec.right(
-        5,
-        seq(
-            field('from', $._expression),
-            choice('->', '->>'),
-            field('to', $._expression),
-            optional(
-                seq(
-                    '..',
-                    field('step', $._expression)
-                )
-            )
+      5,
+      seq(
+        field('from', $._expression),
+        choice('->', '->>'),
+        field('to', $._expression),
+        optional(
+          seq(
+            '..',
+            field('step', $._expression)
+          )
         )
+      )
     ),
 
     comp_expr: $ => prec.left(
-        1,
-        seq(
-            field('left', $._expression),
-            $.comp_op,
-            field('right', $._expression)
-        )
+      1,
+      seq(
+        field('left', $._expression),
+        $.comp_op,
+        field('right', $._expression)
+      )
     ),
 
     sum_expr: $ => prec.left(
-        2,
-        seq(
-            field('left', $._expression),
-            $.sum_op,
-            field('right', $._expression)
-        )
+      2,
+      seq(
+        field('left', $._expression),
+        $.sum_op,
+        field('right', $._expression)
+      )
     ),
 
     mul_expr: $ => prec.left(
-        3,
-        seq(
-            field('left', $._expression),
-            $.mul_op,
-            field('right', $._expression)
-        )
+      3,
+      seq(
+        field('left', $._expression),
+        $.mul_op,
+        field('right', $._expression)
+      )
     ),
 
     pow_expr: $ => prec.left(
-        4,
-        seq(
-            field('left', $._expression),
-            $.pow_op,
-            field('right', $._expression)
-        )
+      4,
+      seq(
+        field('left', $._expression),
+        $.pow_op,
+        field('right', $._expression)
+      )
     ),
 
     unary_percent: $ => prec.left(
-        6,
-        seq($._value, '%')
+      6,
+      seq($._value, '%')
     ),
 
     unary_expr: $ => prec.left(
-        6,
-        choice(
-            seq($.unary_op, $._expression),
-            $.unary_percent
-        )
+      6,
+      choice(
+        seq($.unary_op, $._expression),
+        $.unary_percent
+      )
     ),
 
     and_expr: $ => prec.left(
-        1,
-        seq(
-            $._expression,
-            'and',
-            $._expression
-        )
+      1,
+      seq(
+        $._expression,
+        'and',
+        $._expression
+      )
     ),
 
     or_expr: $ => prec.left(
-        1,
-        seq(
-            $._expression,
-            'or',
-            $._expression
-        )
+      1,
+      seq(
+        $._expression,
+        'or',
+        $._expression
+      )
     ),
 
     if_expr: $ => prec.left(
-        seq(
-            'if',
-            field('condition', $._expression),
-            choice(
-                seq(
-                    'then',
-                    field('consequence', $._expression)
-                ),
-                field('consequence', $.block)
-            ),
-            optional(
-                seq(
-                    'else',
-                    field('alternative', $._expression)
-                )
-            )
+      seq(
+        'if',
+        field('condition', $._expression),
+        choice(
+          seq(
+            'then',
+            field('consequence', $._expression)
+          ),
+          field('consequence', $.block)
+        ),
+        optional(
+          seq(
+            'else',
+            field('alternative', $._expression)
+          )
         )
+      )
     ),
 
     parenthesized_expr: $ => seq(
-        '(',
-        $._expression,
-        ')'
+      '(',
+      $._expression,
+      ')'
     ),
 
     _do_expr_or_block: $ => choice(
-        seq(
-            'do',
-            field('body', $._expression)
-        ),
-        field('body', $.block)
+      seq(
+        'do',
+        field('body', $._expression)
+      ),
+      field('body', $.block)
     ),
 
     for_expr: $ => seq(
-        'for',
-        field('left', $.identifier),
-        'in',
-        field('right', $._expression),
-        $._do_expr_or_block
+      'for',
+      field('left', $.identifier),
+      'in',
+      field('right', $._expression),
+      $._do_expr_or_block
     ),
 
     while_expr: $ => seq(
-        'while',
-        field('condition', $._expression),
-        $._do_expr_or_block
+      'while',
+      field('condition', $._expression),
+      $._do_expr_or_block
     ),
 
     is_expr: $ => prec.right(
-        seq(
-            field('left', $._value),
-            'is',
-            optional('not'),
-            field('right', choice(
-                $._type,
-                $._primitive_value
-            ))
-        )
+      seq(
+        field('left', $._value),
+        'is',
+        optional('not'),
+        field('right', choice(
+          $._type,
+          $._primitive_value
+        ))
+      )
     ),
 
     break_expr: $ => prec.right(
-        seq(
-            'break',
-            optional($._expression)
-        )
+      seq(
+        'break',
+        optional($._expression)
+      )
     ),
 
     _import_path: $ => seq($._import_ident, repeat(seq('/', $._import_ident))),
     _import_ident: $ => prec.right(
-        repeat1(choice('-', $.identifier, '.'))
+      repeat1(choice('-', $.identifier, '.'))
     ),
 
     import_expr: $ => seq(
-        'take',
-        optional(seq($.identifier, 'from')), // TODO: destructurization?
-        field('source', $._import_path)
+      'take',
+      optional(seq($.identifier, 'from')), // TODO: destructurization?
+      field('source', $._import_path)
     ),
 
     export_expr: $ => seq(
-        'give',
-        choice(
-            field('declaration', $._declaration),
-            field('identifier', $.identifier)
-        )
+      'give',
+      choice(
+        field('declaration', $._declaration),
+        field('identifier', $.identifier)
+      )
     ),
 
     fuck_expr: $ => seq(
-        'fuck',
-        field('value', $._expression)
+      'fuck',
+      field('value', $._expression)
     ),
 
     return_expr: $ => seq(
-        'return',
-        field('value', $._expression)
+      'return',
+      field('value', $._expression)
     ),
 
     _binary_expr: $ => choice(
-        $.comp_expr,
-        $.sum_expr,
-        $.mul_expr,
-        $.pow_expr,
+      $.comp_expr,
+      $.sum_expr,
+      $.mul_expr,
+      $.pow_expr,
 
-        $.and_expr,
-        $.or_expr,
+      $.and_expr,
+      $.or_expr,
 
-        $.is_expr
+      $.is_expr
     )
   }
 })
