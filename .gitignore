@@ -1,6 +1,8 @@
 __pycache__
 build
 node_modules
+.idea
+Cargo.lock
 example
 *.py
 run
