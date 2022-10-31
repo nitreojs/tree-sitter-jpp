@@ -1,4 +1,10 @@
 # SYNTAX:
 # export_expr: 'give' ( declaration | identifier )
 
+
+## foo.jpp
 give const important_value = 42  # returns: 42
+
+## bar.jpp
+take foo.jpp            # returns: null
+print(important_value)  # returns: 42
