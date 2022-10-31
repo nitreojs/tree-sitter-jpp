@@ -460,20 +460,21 @@ module.exports = grammar({
       )
     ),
 
-    range_expr: $ => prec.right(
-      5,
-      seq(
-        field('from', $._expression),
-        choice('->', '->>'),
-        field('to', $._expression),
-        optional(
-          seq(
-            '..',
-            field('step', $._expression)
-          )
-        )
+    range_expr: $ => prec.right(seq(
+      'range',
+      'from',
+      field('from', $._expression),
+      'to',
+      field('to', $._expression),
+      optional(seq(
+        optional('with'),
+        'step',
+        field('step', $._expression)
+      )),
+      optional(
+        field('type', choice('inclusive', 'exclusive'))
       )
-    ),
+    )),
 
     comp_expr: $ => prec.left(
       1,

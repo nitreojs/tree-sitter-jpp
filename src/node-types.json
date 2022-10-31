@@ -6276,6 +6276,20 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "exclusive",
+            "named": false
+          },
+          {
+            "type": "inclusive",
+            "named": false
+          }
+        ]
       }
     }
   },
@@ -8464,15 +8478,7 @@
     "named": false
   },
   {
-    "type": "->>",
-    "named": false
-  },
-  {
     "type": ".",
-    "named": false
-  },
-  {
-    "type": "..",
     "named": false
   },
   {
@@ -8564,6 +8570,10 @@
     "named": true
   },
   {
+    "type": "exclusive",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
@@ -8605,6 +8615,10 @@
   },
   {
     "type": "in",
+    "named": false
+  },
+  {
+    "type": "inclusive",
     "named": false
   },
   {
@@ -8680,11 +8694,19 @@
     "named": true
   },
   {
+    "type": "range",
+    "named": false
+  },
+  {
     "type": "return",
     "named": false
   },
   {
     "type": "set",
+    "named": false
+  },
+  {
+    "type": "step",
     "named": false
   },
   {
@@ -8712,6 +8734,10 @@
     "named": false
   },
   {
+    "type": "to",
+    "named": false
+  },
+  {
     "type": "true",
     "named": false
   },
@@ -8729,6 +8755,10 @@
   },
   {
     "type": "while",
+    "named": false
+  },
+  {
+    "type": "with",
     "named": false
   },
   {
