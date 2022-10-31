@@ -66,6 +66,23 @@ module.exports = grammar({
       ),
       ']'
     ),
+    object: $ => seq(
+      'object',
+      field('body', $._object_body)
+    ),
+
+    _object_body: $ => seq(
+      '{',
+      repeat(
+        seq(
+          field('key', $.identifier),
+          $._assignment_or_declaration_char,
+          field('value', $._expression),
+          optional(',')
+        )
+      ),
+      '}'
+    ),
 
     // INFO: string helpers; from tree-sitter-javascript
     unescaped_double_string_fragment: () =>
@@ -139,6 +156,7 @@ module.exports = grammar({
 
         $.identifier,
         $.array,
+        $.object,
 
         $._semicolon
       )
@@ -221,6 +239,7 @@ module.exports = grammar({
     ),
 
     _assignment_char: () => choice('=', 'be', 'is'),
+    _assignment_or_declaration_char: $ => choice($._assignment_char, ':'),
 
     variable_decl: $ => prec.right(
       seq(
