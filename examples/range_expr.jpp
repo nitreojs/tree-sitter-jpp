@@ -1,5 +1,6 @@
 # SYNTAX:
 # range_expr: expression ( '->' | '->>' ) expression [ '..' expression ]
+# range_expr: 'range' 'from' expression 'to' expression [ [ 'with' ] 'step' expression ] [ 'inclusive' | 'exclusive' ]
 
 for i in 1 ->> 5 do nothing
 for i in 100 -> 0 .. -1 do print(i)
