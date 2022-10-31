@@ -1,0 +1,5 @@
+# SYNTAX:
+# object: 'object' _object_body
+# _object_body: '{' [ identifier _assignment_or_declaration_char _expression [ ',' ] ] '}'
+
+object { foo is 'bar' let_me be free() }  # returns: object { ... }
