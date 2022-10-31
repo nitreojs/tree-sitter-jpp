@@ -70,6 +70,7 @@ module.exports = grammar({
       'object',
       field('body', $._object_body)
     ),
+    this: () => '@',
 
     _object_body: $ => seq(
       '{',
@@ -150,6 +151,8 @@ module.exports = grammar({
         $.nothing,
         $.continue,
 
+        $.this,
+
         $.call_expr,
         $.subscript_expr,
         $.member_expr,
@@ -204,7 +207,10 @@ module.exports = grammar({
       'float',
       'string',
       'nothing',
-      'number'
+      'number',
+      'object',
+      'range',
+      'enum'
     ),
 
     array_type: $ => seq(
