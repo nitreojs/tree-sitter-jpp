@@ -105,6 +105,14 @@
           "named": true
         },
         {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
+          "named": true
+        },
+        {
           "type": "nothing",
           "named": true
         },
@@ -289,6 +297,14 @@
         },
         {
           "type": "mul_expr",
+          "named": true
+        },
+        {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
           "named": true
         },
         {
@@ -516,6 +532,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -617,6 +641,10 @@
         },
         {
           "type": "member_expr",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
           "named": true
         },
         {
@@ -724,6 +752,14 @@
         },
         {
           "type": "mul_expr",
+          "named": true
+        },
+        {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
           "named": true
         },
         {
@@ -914,6 +950,14 @@
           "named": true
         },
         {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
+          "named": true
+        },
+        {
           "type": "nothing",
           "named": true
         },
@@ -1098,6 +1142,14 @@
         },
         {
           "type": "mul_expr",
+          "named": true
+        },
+        {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
           "named": true
         },
         {
@@ -1295,6 +1347,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -1541,6 +1601,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -1776,6 +1844,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -2018,6 +2094,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -2197,6 +2281,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -2434,6 +2526,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -2568,6 +2668,10 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
             "type": "struct_decl",
             "named": true
           },
@@ -2696,6 +2800,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -2891,6 +3003,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -3076,6 +3196,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -3274,6 +3402,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -3521,6 +3657,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -3700,6 +3844,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -3885,6 +4037,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -4047,6 +4207,10 @@
             "named": true
           },
           {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -4189,6 +4353,10 @@
           },
           {
             "type": "member_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -4338,6 +4506,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -4520,6 +4696,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -4618,6 +4802,58 @@
     }
   },
   {
+    "type": "namespace_decl",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "namespace_member_expr",
+    "named": true,
+    "fields": {
+      "namespace": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "property": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "nothing",
     "named": true,
     "fields": {}
@@ -4681,6 +4917,10 @@
           {
             "type": "array",
             "named": true
+          },
+          {
+            "type": "as",
+            "named": false
           },
           {
             "type": "assignment_expr",
@@ -4775,6 +5015,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -4789,6 +5037,10 @@
           {
             "type": "object",
             "named": true
+          },
+          {
+            "type": "of",
+            "named": false
           },
           {
             "type": "or_expr",
@@ -4972,6 +5224,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -5163,6 +5423,14 @@
           "named": true
         },
         {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
+          "named": true
+        },
+        {
           "type": "nothing",
           "named": true
         },
@@ -5350,6 +5618,14 @@
           "named": true
         },
         {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
+          "named": true
+        },
+        {
           "type": "nothing",
           "named": true
         },
@@ -5534,6 +5810,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -5725,6 +6009,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -5904,6 +6196,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -6110,6 +6410,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -6292,6 +6600,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -6471,6 +6787,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -6676,6 +7000,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -6861,6 +7193,14 @@
         },
         {
           "type": "mul_expr",
+          "named": true
+        },
+        {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
           "named": true
         },
         {
@@ -7151,6 +7491,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -7339,6 +7687,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -7454,6 +7810,10 @@
           },
           {
             "type": "member_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -7590,6 +7950,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -7772,6 +8140,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -8078,6 +8454,14 @@
           "named": true
         },
         {
+          "type": "namespace_decl",
+          "named": true
+        },
+        {
+          "type": "namespace_member_expr",
+          "named": true
+        },
+        {
           "type": "nothing",
           "named": true
         },
@@ -8209,6 +8593,10 @@
           "named": true
         },
         {
+          "type": "namespace_member_expr",
+          "named": true
+        },
+        {
           "type": "nothing",
           "named": true
         },
@@ -8247,6 +8635,28 @@
     "type": "variable_decl",
     "named": true,
     "fields": {
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "nullable_type",
+            "named": true
+          },
+          {
+            "type": "predefined_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": false,
         "required": false,
@@ -8341,6 +8751,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -8542,6 +8960,14 @@
             "named": true
           },
           {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
+            "named": true
+          },
+          {
             "type": "nothing",
             "named": true
           },
@@ -8721,6 +9147,14 @@
           },
           {
             "type": "mul_expr",
+            "named": true
+          },
+          {
+            "type": "namespace_decl",
+            "named": true
+          },
+          {
+            "type": "namespace_member_expr",
             "named": true
           },
           {
@@ -9020,6 +9454,10 @@
     "named": true
   },
   {
+    "type": "namespace",
+    "named": false
+  },
+  {
     "type": "no",
     "named": false
   },
@@ -9045,6 +9483,10 @@
   },
   {
     "type": "object",
+    "named": false
+  },
+  {
+    "type": "of",
     "named": false
   },
   {

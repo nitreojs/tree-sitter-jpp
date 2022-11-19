@@ -161,6 +161,7 @@ module.exports = grammar({
         $.call_expr,
         $.subscript_expr,
         $.member_expr,
+        $.namespace_member_expr,
 
         $.identifier,
         $.array,
@@ -204,7 +205,8 @@ module.exports = grammar({
       $.class_decl,
       $.struct_decl,
       $.enum_decl,
-      $.type_decl
+      $.type_decl,
+      $.namespace_decl
     ),
 
     predefined_type: () => choice(
@@ -251,6 +253,7 @@ module.exports = grammar({
     ),
 
     _assignment_char: () => choice('=', 'be', 'is'),
+    _declaration_char: () => choice(':', 'as', 'of'),
     _assignment_or_declaration_char: $ => choice($._assignment_char, ':'),
 
     _unknown_expression: () => '?',
@@ -259,6 +262,12 @@ module.exports = grammar({
       seq(
         choice('let', 'const'),
         field('variable', $.identifier),
+        optional(
+          seq(
+            $._declaration_char,
+            field('type', $._type)
+          )
+        ),
         optional(
           seq(
             $._assignment_char,
@@ -271,7 +280,8 @@ module.exports = grammar({
     assignment_target: $ => choice(
       $.identifier,
       $.subscript_expr,
-      $.member_expr
+      $.member_expr,
+      $.namespace_member_expr
     ),
 
     assignment_expr: $ => seq(
@@ -364,6 +374,12 @@ module.exports = grammar({
       'class',
       field('name', $.identifier),
       $.class_body
+    ),
+
+    namespace_decl: $ => seq(
+      'namespace',
+      field('name', $.identifier),
+      field('body', $.block)
     ),
 
     constructor_expr: $ => prec.left(seq(
@@ -473,6 +489,12 @@ module.exports = grammar({
         '.',
         field('property', alias($.identifier, $.property_identifier))
       )
+    ),
+
+    namespace_member_expr: $ => seq(
+      field('namespace', $.identifier),
+      ':',
+      field('property', alias($.identifier, $.property_identifier))
     ),
 
     call_expr: $ => prec(
