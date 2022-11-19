@@ -1709,6 +1709,10 @@
         "required": false,
         "types": [
           {
+            "type": "silent_type_annotation",
+            "named": true
+          },
+          {
             "type": "type_annotation",
             "named": true
           }
@@ -1970,6 +1974,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "silent_type_annotation",
+            "named": true
+          },
           {
             "type": "type_annotation",
             "named": true
@@ -3513,6 +3521,10 @@
         "required": false,
         "types": [
           {
+            "type": "silent_type_annotation",
+            "named": true
+          },
+          {
             "type": "type_annotation",
             "named": true
           }
@@ -4919,10 +4931,6 @@
             "named": true
           },
           {
-            "type": "as",
-            "named": false
-          },
-          {
             "type": "assignment_expr",
             "named": true
           },
@@ -5037,10 +5045,6 @@
           {
             "type": "object",
             "named": true
-          },
-          {
-            "type": "of",
-            "named": false
           },
           {
             "type": "or_expr",
@@ -7093,6 +7097,37 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "silent_type_annotation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type",
+          "named": true
+        },
+        {
+          "type": "literal_type",
+          "named": true
+        },
+        {
+          "type": "nullable_type",
+          "named": true
+        },
+        {
+          "type": "predefined_type",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        }
+      ]
     }
   },
   {

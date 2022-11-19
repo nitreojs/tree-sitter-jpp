@@ -294,9 +294,11 @@ module.exports = grammar({
     ),
 
     type_annotation: $ => seq(
-      choice(':', 'as'),
+      choice($._declaration_char),
       choice($._type, $.literal_type)
     ),
+
+    silent_type_annotation: $ => choice($._type, $.literal_type),
 
     _function_decl_arg: $ => seq(
       field('name', $.identifier),
@@ -329,7 +331,7 @@ module.exports = grammar({
     _function_signature: $ => seq(
       optional(field('type_parameters', $.type_parameters)),
       field('arguments', $.function_decl_args),
-      optional(field('return_type', $.type_annotation)),
+      optional(field('return_type', choice($.type_annotation, $.silent_type_annotation))),
       choice(
         field('body', $.block),
         seq('->', field('body', $._expression))
