@@ -247,6 +247,8 @@ module.exports = grammar({
     _assignment_char: () => choice('=', 'be', 'is'),
     _assignment_or_declaration_char: $ => choice($._assignment_char, ':'),
 
+    _unknown_expression: () => '?',
+
     variable_decl: $ => prec.right(
       seq(
         choice('let', 'const'),
@@ -432,7 +434,10 @@ module.exports = grammar({
       '(',
       repeat(
         seq(
-          $._expression,
+          choice(
+            $._expression,
+            $._unknown_expression
+          ),
           optional(choice(',', 'and'))
         )
       ),
