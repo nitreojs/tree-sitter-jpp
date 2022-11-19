@@ -45,6 +45,10 @@
           "named": true
         },
         {
+          "type": "constructor_expr",
+          "named": true
+        },
+        {
           "type": "continue",
           "named": true
         },
@@ -225,6 +229,10 @@
         },
         {
           "type": "comp_expr",
+          "named": true
+        },
+        {
+          "type": "constructor_expr",
           "named": true
         },
         {
@@ -448,6 +456,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -655,6 +667,10 @@
           "named": true
         },
         {
+          "type": "constructor_expr",
+          "named": true
+        },
+        {
           "type": "continue",
           "named": true
         },
@@ -838,6 +854,10 @@
           "named": true
         },
         {
+          "type": "constructor_expr",
+          "named": true
+        },
+        {
           "type": "continue",
           "named": true
         },
@@ -1018,6 +1038,10 @@
         },
         {
           "type": "comp_expr",
+          "named": true
+        },
+        {
+          "type": "constructor_expr",
           "named": true
         },
         {
@@ -1211,6 +1235,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -1453,6 +1481,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -1684,6 +1716,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -1922,6 +1958,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -2100,6 +2140,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -2254,6 +2298,32 @@
     }
   },
   {
+    "type": "constructor_expr",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "call_args",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "enum_body",
     "named": true,
     "fields": {
@@ -2301,6 +2371,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -2565,6 +2639,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -2753,6 +2831,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -2934,6 +3016,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -3128,6 +3214,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -3371,6 +3461,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -3549,6 +3643,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -3724,6 +3822,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -4176,6 +4278,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -4351,6 +4457,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -4601,6 +4711,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -4801,6 +4915,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -4982,6 +5100,10 @@
         },
         {
           "type": "comp_expr",
+          "named": true
+        },
+        {
+          "type": "constructor_expr",
           "named": true
         },
         {
@@ -5168,6 +5290,10 @@
           "named": true
         },
         {
+          "type": "constructor_expr",
+          "named": true
+        },
+        {
           "type": "continue",
           "named": true
         },
@@ -5348,6 +5474,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -5535,6 +5665,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -5710,6 +5844,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -5912,6 +6050,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -6090,6 +6232,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -6265,6 +6411,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -6466,6 +6616,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -6647,6 +6801,10 @@
         },
         {
           "type": "comp_expr",
+          "named": true
+        },
+        {
+          "type": "constructor_expr",
           "named": true
         },
         {
@@ -6933,6 +7091,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -7114,6 +7276,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -7367,6 +7533,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -7542,6 +7712,10 @@
           },
           {
             "type": "comp_expr",
+            "named": true
+          },
+          {
+            "type": "constructor_expr",
             "named": true
           },
           {
@@ -7844,6 +8018,10 @@
           "named": true
         },
         {
+          "type": "constructor_expr",
+          "named": true
+        },
+        {
           "type": "continue",
           "named": true
         },
@@ -8106,6 +8284,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -8300,6 +8482,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -8478,6 +8664,10 @@
             "named": true
           },
           {
+            "type": "constructor_expr",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -8620,6 +8810,10 @@
         ]
       }
     }
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "\"",

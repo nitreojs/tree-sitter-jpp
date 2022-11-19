@@ -12,14 +12,19 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat($._expression),
 
-    identifier: () => token(
-      repeat1(
+    identifier: () => token(seq(
+      choice(
+        IDENTIFIER,
+        EMOJI
+      ),
+      repeat(
         choice(
           IDENTIFIER,
-          EMOJI
+          EMOJI,
+          DIGIT
         )
       )
-    ),
+    )),
     _integer: () => token(
       repeat1(DIGIT)
     ),
@@ -177,6 +182,7 @@ module.exports = grammar({
       $.return_expr,
       $.struct_expr,
       $.parenthesized_expr,
+      $.constructor_expr,
 
       $.if_expr,
       $.for_expr,
@@ -359,6 +365,12 @@ module.exports = grammar({
       field('name', $.identifier),
       $.class_body
     ),
+
+    constructor_expr: $ => prec.left(seq(
+      field('name', $.identifier),
+      '!',
+      optional($.call_args)
+    )),
 
     struct_body: $ => seq(
       '{',
